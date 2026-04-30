@@ -1,5 +1,6 @@
 import { Download, Mail, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import matongPortrait from '../../imports/matong.png';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -45,7 +46,7 @@ export function HeroSection() {
 
           <div className="w-80 h-80 rounded-sm border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img
-              src="/src/imports/matong.png"
+              src={matongPortrait}
               alt="Professional Portrait"
               className="w-full h-full object-cover"
             />
