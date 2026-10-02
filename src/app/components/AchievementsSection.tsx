@@ -6,16 +6,6 @@ export function AchievementsSection() {
 
   const achievements = [
     {
-      icon: Trophy,
-      category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
-      title: language === 'en' ? 'Excellent Student - SP26 Semester' : 'Sinh viên Giỏi - Học kỳ SP26',
-      description: language === 'en'
-        ? 'Recognized for outstanding academic performance in Spring 2026 semester at FPT University'
-        : 'Được công nhận vì thành tích học tập tốt trong học kỳ Xuân 2026 tại Đại học FPT',
-      date: language === 'en' ? 'Spring 2026' : 'Xuân 2026',
-      impact: language === 'en' ? 'Maintained high GPA and consistent academic performance' : 'Duy trì GPA cao và thành tích học tập ổn định'
-    },
-    {
       icon: Star,
       category: language === 'en' ? 'Graduation' : 'Tốt nghiệp',
       title: language === 'en' ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi',
@@ -24,6 +14,16 @@ export function AchievementsSection() {
         : 'Tốt nghiệp Đại học FPT loại Giỏi với GPA toàn khóa 3.3/4.0',
       date: '2026',
       impact: language === 'en' ? 'Overall GPA: 3.3/4.0' : 'GPA toàn khóa: 8,2/10'
+    },
+    {
+      icon: Trophy,
+      category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
+      title: language === 'en' ? 'Excellent Student - SP26 Semester' : 'Sinh viên Giỏi - Học kỳ SP26',
+      description: language === 'en'
+        ? 'Recognized for outstanding academic performance in Spring 2026 semester at FPT University'
+        : 'Được công nhận vì thành tích học tập tốt trong học kỳ Xuân 2026 tại Đại học FPT',
+      date: language === 'en' ? 'Spring 2026' : 'Xuân 2026',
+      impact: language === 'en' ? 'Maintained high GPA and consistent academic performance' : 'Duy trì GPA cao và thành tích học tập ổn định'
     },
     {
       icon: Trophy,
