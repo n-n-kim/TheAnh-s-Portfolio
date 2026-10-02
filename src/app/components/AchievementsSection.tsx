@@ -30,10 +30,10 @@ export function AchievementsSection() {
       category: language === 'en' ? 'Graduation' : 'Tốt nghiệp',
       title: language === 'en' ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi',
       description: language === 'en'
-        ? 'Graduated from FPT University with an overall GPA of 8.2/10'
-        : 'Tốt nghiệp Đại học FPT loại Giỏi với GPA toàn khóa 8,2/10',
+        ? 'Graduated from FPT University with an overall GPA of 3.3/4.0'
+        : 'Tốt nghiệp Đại học FPT loại Giỏi với GPA toàn khóa 3.3/4.0',
       date: '2026',
-      impact: language === 'en' ? 'Overall GPA: 8.2/10' : 'GPA toàn khóa: 8,2/10'
+      impact: language === 'en' ? 'Overall GPA: 3.3/4.0' : 'GPA toàn khóa: 8,2/10'
     },
     {
       icon: Trophy,
