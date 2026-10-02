@@ -8,16 +8,6 @@ export function AchievementsSection() {
     {
       icon: Trophy,
       category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
-      title: language === 'en' ? 'Excellent Student - SU26 Semester' : 'Sinh viên Giỏi - Học kỳ SU26',
-      description: language === 'en'
-        ? 'Recognized for outstanding academic performance in the Summer 2026 semester at FPT University'
-        : 'Được công nhận danh hiệu Sinh viên Giỏi trong học kỳ Hè 2026 tại Đại học FPT',
-      date: language === 'en' ? 'Summer 2026' : 'Hè 2026',
-      impact: language === 'en' ? 'Sustained excellent academic performance through the final semester' : 'Duy trì thành tích học tập xuất sắc đến học kỳ cuối'
-    },
-    {
-      icon: Trophy,
-      category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
       title: language === 'en' ? 'Excellent Student - SP26 Semester' : 'Sinh viên Giỏi - Học kỳ SP26',
       description: language === 'en'
         ? 'Recognized for outstanding academic performance in Spring 2026 semester at FPT University'
@@ -34,6 +24,16 @@ export function AchievementsSection() {
         : 'Tốt nghiệp Đại học FPT loại Giỏi với GPA toàn khóa 3.3/4.0',
       date: '2026',
       impact: language === 'en' ? 'Overall GPA: 3.3/4.0' : 'GPA toàn khóa: 8,2/10'
+    },
+    {
+      icon: Trophy,
+      category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
+      title: language === 'en' ? 'Excellent Student - SU26 Semester' : 'Sinh viên Giỏi - Học kỳ SU26',
+      description: language === 'en'
+        ? 'Recognized for outstanding academic performance in the Summer 2026 semester at FPT University'
+        : 'Được công nhận danh hiệu Sinh viên Giỏi trong học kỳ Hè 2026 tại Đại học FPT',
+      date: language === 'en' ? 'Summer 2026' : 'Hè 2026',
+      impact: language === 'en' ? 'Sustained excellent academic performance through the final semester' : 'Duy trì thành tích học tập xuất sắc đến học kỳ cuối'
     },
     {
       icon: Trophy,
