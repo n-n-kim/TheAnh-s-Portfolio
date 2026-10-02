@@ -153,14 +153,20 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 group">
-              <div className="p-8">
+            <div key={index} className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 group flex h-full flex-col">
+              <div className="p-8 flex-1">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <h3 className="text-lg mb-2 tracking-wide group-hover:text-gray-600 transition-colors">{project.title}</h3>
                     <p className="text-xs tracking-wider text-gray-500 mb-3">{project.role}</p>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors flex-shrink-0" />
+                  {'projectUrl' in project && project.projectUrl ? (
+                    <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" aria-label={language === 'en' ? 'View project' : 'Xem dự án'}>
+                      <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors flex-shrink-0" />
+                    </a>
+                  ) : 'thesisUrl' in project && project.thesisUrl ? (
+                    <Download className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  ) : null}
                 </div>
 
                 <p className="text-sm text-gray-600 mb-6 leading-relaxed">{project.description}</p>
@@ -190,8 +196,8 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 px-8 py-4 bg-gray-50 flex flex-wrap items-center gap-x-6 gap-y-3">
-                {'projectUrl' in project && project.projectUrl ? (
+              <div className="mt-auto border-t border-gray-200 px-8 py-4 bg-gray-50 flex flex-wrap items-center gap-x-6 gap-y-3">
+                {'projectUrl' in project && project.projectUrl && (
                   <a
                     href={project.projectUrl}
                     target="_blank"
@@ -201,10 +207,6 @@ export function ProjectsSection() {
                     {language === 'en' ? 'VIEW PROJECT' : 'XEM DỰ ÁN'}
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-                ) : (
-                  <button className="text-xs tracking-wider hover:text-gray-600 transition-colors">
-                    {t('projects.view')}
-                  </button>
                 )}
 
                 {'thesisUrl' in project && project.thesisUrl && (
