@@ -6,6 +6,31 @@ export function ProjectsSection() {
 
   const projects = [
     {
+      title: language === 'en'
+        ? 'Hybrid ARIMAX-LSTM Model for Predicting Price Volatility of Vietnam’s Rice Exports'
+        : 'Mô hình lai ARIMAX-LSTM để dự đoán biến động giá xuất khẩu gạo của Việt Nam',
+      description: language === 'en'
+        ? 'Graduation thesis applying a hybrid ARIMAX-LSTM model to analyze and forecast price volatility in Vietnam’s rice exports.'
+        : 'Đồ án tốt nghiệp ứng dụng mô hình lai ARIMAX-LSTM để phân tích và dự đoán biến động giá xuất khẩu gạo của Việt Nam.',
+      role: language === 'en' ? 'Graduation Thesis' : 'Đồ án Tốt nghiệp',
+      responsibilities: language === 'en' ? [
+        'Collected and prepared Vietnam rice export price data and relevant external variables',
+        'Developed a hybrid model combining ARIMAX and LSTM forecasting methods',
+        'Evaluated forecasting performance and analyzed price volatility patterns'
+      ] : [
+        'Thu thập và xử lý dữ liệu giá xuất khẩu gạo Việt Nam cùng các biến ngoại sinh liên quan',
+        'Xây dựng mô hình dự báo lai kết hợp phương pháp ARIMAX và LSTM',
+        'Đánh giá hiệu quả dự báo và phân tích xu hướng biến động giá'
+      ],
+      achievements: language === 'en' ? [
+        'Completed an interdisciplinary research project combining international business and data analytics',
+        'Applied quantitative forecasting methods to a practical Vietnamese export problem'
+      ] : [
+        'Hoàn thành nghiên cứu liên ngành kết hợp kinh doanh quốc tế và phân tích dữ liệu',
+        'Ứng dụng phương pháp dự báo định lượng vào bài toán xuất khẩu thực tế của Việt Nam'
+      ]
+    },
+    {
       title: language === 'en' ? 'FloodSense Product Development' : 'Phát triển sản phẩm FloodSense',
       description: language === 'en'
         ? 'Product research and development project for Sony Vietnam, focusing on innovative flood sensing technology and smart solutions.'

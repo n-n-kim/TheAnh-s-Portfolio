@@ -8,12 +8,32 @@ export function AchievementsSection() {
     {
       icon: Trophy,
       category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
-      title: language === 'en' ? 'Good Student - SP26 Semester' : 'Sinh viên Giỏi - Học kỳ SP26',
+      title: language === 'en' ? 'Excellent Student - SU26 Semester' : 'Sinh viên Giỏi - Học kỳ SU26',
+      description: language === 'en'
+        ? 'Recognized for outstanding academic performance in the Summer 2026 semester at FPT University'
+        : 'Được công nhận danh hiệu Sinh viên Giỏi trong học kỳ Hè 2026 tại Đại học FPT',
+      date: language === 'en' ? 'Summer 2026' : 'Hè 2026',
+      impact: language === 'en' ? 'Sustained excellent academic performance through the final semester' : 'Duy trì thành tích học tập xuất sắc đến học kỳ cuối'
+    },
+    {
+      icon: Trophy,
+      category: language === 'en' ? 'Academic Excellence' : 'Xuất sắc Học tập',
+      title: language === 'en' ? 'Excellent Student - SP26 Semester' : 'Sinh viên Giỏi - Học kỳ SP26',
       description: language === 'en'
         ? 'Recognized for outstanding academic performance in Spring 2026 semester at FPT University'
         : 'Được công nhận vì thành tích học tập tốt trong học kỳ Xuân 2026 tại Đại học FPT',
       date: language === 'en' ? 'Spring 2026' : 'Xuân 2026',
       impact: language === 'en' ? 'Maintained high GPA and consistent academic performance' : 'Duy trì GPA cao và thành tích học tập ổn định'
+    },
+    {
+      icon: Star,
+      category: language === 'en' ? 'Graduation' : 'Tốt nghiệp',
+      title: language === 'en' ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi',
+      description: language === 'en'
+        ? 'Graduated from FPT University with an overall GPA of 8.2/10'
+        : 'Tốt nghiệp Đại học FPT loại Giỏi với GPA toàn khóa 8,2/10',
+      date: '2026',
+      impact: language === 'en' ? 'Overall GPA: 8.2/10' : 'GPA toàn khóa: 8,2/10'
     },
     {
       icon: Trophy,
@@ -147,7 +167,7 @@ export function AchievementsSection() {
             <p className="text-xs tracking-wider">{language === 'en' ? 'CERTIFICATES' : 'CHỨNG CHỈ'}</p>
           </div>
           <div className="text-center p-6 bg-black text-white">
-            <p className="text-3xl mb-2">3x</p>
+            <p className="text-3xl mb-2">4x</p>
             <p className="text-xs tracking-wider">{language === 'en' ? 'GOOD' : 'GIỎI'}</p>
           </div>
           <div className="text-center p-6 bg-black text-white">
