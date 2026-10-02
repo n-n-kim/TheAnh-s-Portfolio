@@ -25,14 +25,14 @@ const translations = {
     'nav.rights': '© 2026 All Rights Reserved',
 
     // Hero Section
-    'hero.title': 'INTERNATIONAL BUSINESS STUDENT',
+    'hero.title': 'INTERNATIONAL BUSINESS',
     'hero.greeting': "Hello, I'm",
     'hero.name': 'Nguyễn Thế Anh',
     'hero.intro':
-      'International Business graduate pursuing a career in Human Resources, with strengths in communication, recruitment, and people coordination.',
+      'An International Business graduate with a strong interest in business operations, professional development, and organizational growth. Adaptable, eager to learn, and open to diverse career opportunities where I can apply my knowledge, develop practical skills, and contribute to meaningful results.',
     'hero.objective.title': 'CAREER OBJECTIVE',
     'hero.objective.text':
-      'To build a long-term career in Human Resources with a focus on recruitment and talent development, continuously enhancing my expertise to effectively identify, attract, and develop the right talent, while contributing to a sustainable and people-centered organization.',
+      'To establish a long-term career in a professional environment where I can continuously expand my knowledge, strengthen my capabilities, and take on new challenges. I aspire to grow through diverse experiences, contribute to organizational success, and develop into a well-rounded professional.',
     'hero.download': 'DOWNLOAD CV',
     'hero.contact': 'CONTACT ME',
 

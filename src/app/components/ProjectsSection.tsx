@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function ProjectsSection() {
@@ -13,6 +13,8 @@ export function ProjectsSection() {
         ? 'Graduation thesis applying a hybrid ARIMAX-LSTM model to analyze and forecast price volatility in Vietnam’s rice exports.'
         : 'Đồ án tốt nghiệp ứng dụng mô hình lai ARIMAX-LSTM để phân tích và dự đoán biến động giá xuất khẩu gạo của Việt Nam.',
       role: language === 'en' ? 'Graduation Thesis' : 'Đồ án Tốt nghiệp',
+      projectUrl: 'https://www.facebook.com/profile.php?id=61583161011775',
+      thesisUrl: '/Final_Thesis_Revised_After_the_Report.pdf',
       responsibilities: language === 'en' ? [
         'Collected and prepared Vietnam rice export price data and relevant external variables',
         'Developed a hybrid model combining ARIMAX and LSTM forecasting methods',
@@ -188,10 +190,34 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 px-8 py-4 bg-gray-50">
-                <button className="text-xs tracking-wider hover:text-gray-600 transition-colors">
-                  {t('projects.view')}
-                </button>
+              <div className="border-t border-gray-200 px-8 py-4 bg-gray-50 flex flex-wrap items-center gap-x-6 gap-y-3">
+                {'projectUrl' in project && project.projectUrl ? (
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs tracking-wider hover:text-gray-600 transition-colors"
+                  >
+                    {language === 'en' ? 'VIEW PROJECT' : 'XEM DỰ ÁN'}
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <button className="text-xs tracking-wider hover:text-gray-600 transition-colors">
+                    {t('projects.view')}
+                  </button>
+                )}
+
+                {'thesisUrl' in project && project.thesisUrl && (
+                  <a
+                    href={project.thesisUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs tracking-wider hover:text-gray-600 transition-colors"
+                  >
+                    {language === 'en' ? 'VIEW FINAL THESIS' : 'XEM LUẬN VĂN'}
+                    <Download className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             </div>
           ))}

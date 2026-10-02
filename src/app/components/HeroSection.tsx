@@ -3,7 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import matongPortrait from '../../imports/matong.png';
 
 export function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="flex items-center justify-center min-h-screen px-16 py-20">
@@ -30,12 +30,26 @@ export function HeroSection() {
               </p>
             </div>
 
-            <div className="flex gap-4">
-              <button className="px-8 py-4 bg-black text-white hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 group">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="/Nguyen_The_Anh_CV_English.pdf"
+                download
+                className="px-6 py-4 bg-black text-white hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 group"
+              >
                 <Download className="w-4 h-4" />
-                <span className="tracking-wide">{t('hero.download')}</span>
+                <span className="tracking-wide">{language === 'en' ? 'DOWNLOAD CV (EN)' : 'TẢI CV TIẾNG ANH'}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
+
+              <a
+                href="/Nguyen_The_Anh_CV_Vietnamese.pdf"
+                download
+                className="px-6 py-4 bg-black text-white hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 group"
+              >
+                <Download className="w-4 h-4" />
+                <span className="tracking-wide">{language === 'en' ? 'DOWNLOAD CV (VI)' : 'TẢI CV TIẾNG VIỆT'}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
 
               <button className="px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-2">
                 <Mail className="w-4 h-4" />
