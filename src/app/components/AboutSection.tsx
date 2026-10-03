@@ -1,89 +1,112 @@
 import { useLanguage } from '../contexts/LanguageContext';
+import { SectionHeader } from './primitives/SectionHeader';
+import { Reveal } from './primitives/Reveal';
+import styles from './AboutSection.module.css';
 
 export function AboutSection() {
   const { t } = useLanguage();
 
+  const interests = [
+    t('about.interest1'),
+    t('about.interest2'),
+    t('about.interest3'),
+    t('about.interest4'),
+    t('about.interest5'),
+    t('about.interest6'),
+    t('about.interest7'),
+    t('about.interest8'),
+  ];
+
+  const hobbies = [
+    t('about.hobby1'),
+    t('about.hobby2'),
+    t('about.hobby3'),
+    t('about.hobby4'),
+    t('about.hobby5'),
+    t('about.hobby6'),
+    t('about.hobby7'),
+    t('about.hobby8'),
+    t('about.hobby9'),
+  ];
+
   return (
-    <div className="flex items-center justify-center min-h-screen px-16 py-20 bg-gray-50">
-      <div className="max-w-5xl w-full">
-        <div className="mb-12">
-          <p className="text-xs tracking-widest text-gray-500 mb-2">{t('about.label')}</p>
-          <h2 className="text-5xl tracking-tight">{t('about.title')}</h2>
-          <div className="w-20 h-1 bg-black mt-4"></div>
-        </div>
+    <div className="section">
+      <div className="section__container">
+        <SectionHeader
+          number="01"
+          eyebrow={t('about.label')}
+          title={<>About <em>Me</em></>}
+        />
 
-        <div className="grid grid-cols-2 gap-12">
-          {/* <div>
-            <h3 className="text-xl mb-4 tracking-wide">{t('about.summary.title')}</h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t('about.summary.p1')}
+        <Reveal className={styles.about}>
+          <div className={styles.about__intro}>
+            <p className={styles.about__display}>
+              {t('about.summary.title')} —{' '}
+              <em>international business, market research, and operational growth.</em>
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              {t('about.summary.p2')}
-            </p>
-          </div> */}
-
-          <div className="bg-white p-8 border border-gray-200 shadow-sm">
-            <h3 className="text-xl mb-6 tracking-wide">{t('about.interests.title')}</h3>
-            <ul className="space-y-3">
-              {[
-                t('about.interest1'),
-                t('about.interest2'),
-                t('about.interest3'),
-                t('about.interest4'),
-                t('about.interest5'),
-                t('about.interest6'),
-                t('about.interest7'),
-                t('about.interest8')
-              ].map((interest, index) => (
-                <li key={index} className="flex items-center gap-3 text-gray-700">
-                  <div className="w-1.5 h-1.5 bg-black"></div>
-                  <span>{interest}</span>
-                </li>
-              ))}
-            </ul>
+            <p className={styles.about__body}>{t('about.summary.p1')}</p>
+            <p className={styles.about__body}>{t('about.summary.p2')}</p>
           </div>
 
-          <div className="bg-white p-8 border border-gray-200 shadow-sm">
-            <h3 className="text-xl mb-6 tracking-wide">{t('about.hobby.title')}</h3>
-            <ul className="space-y-3">
-              {[
-                t('about.hobby1'),
-                t('about.hobby2'),
-                t('about.hobby3'),
-                t('about.hobby4'),
-                t('about.hobby5'),
-                t('about.hobby6'),
-                t('about.hobby7'),
-                t('about.hobby8'),
-                t('about.hobby9')
-                // t('about.interest8')
-              ].map((interest, index) => (
-                <li key={index} className="flex items-center gap-3 text-gray-700">
-                  <div className="w-1.5 h-1.5 bg-black"></div>
-                  <span>{interest}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className={styles.about__side}>
+            <div>
+              <div className={styles.about__listTitle}>
+                <span className={styles.about__listTitleLabel}>
+                  {t('about.interests.title')}
+                </span>
+                <span className={styles.about__listTitleCount}>
+                  {String(interests.length).padStart(2, '0')}
+                </span>
+              </div>
+              <ul className={styles.about__list}>
+                {interests.map((item, i) => (
+                  <li key={i} className={styles.about__listItem}>
+                    <span className={styles.about__listIndex}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className={styles.about__listText}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
+            <div>
+              <div className={styles.about__listTitle}>
+                <span className={styles.about__listTitleLabel}>
+                  {t('about.hobby.title')}
+                </span>
+                <span className={styles.about__listTitleCount}>
+                  {String(hobbies.length).padStart(2, '0')}
+                </span>
+              </div>
+              <ul className={styles.about__list}>
+                {hobbies.map((item, i) => (
+                  <li key={i} className={styles.about__listItem}>
+                    <span className={styles.about__listIndex}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className={styles.about__listText}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Reveal>
 
-        </div>
-
-        <div className="mt-12 grid grid-cols-3 gap-8">
-          <div className="text-center p-8 bg-white border border-gray-200">
-            <p className="text-4xl mb-2">4</p>
-            <p className="text-sm tracking-wider text-gray-600">{t('about.stat1')}</p>
+        <Reveal className={styles.about__stats}>
+          <div className={styles.about__stat}>
+            <span className={styles.about__statValue}>4</span>
+            <span className={styles.about__statLabel}>{t('about.stat1')}</span>
           </div>
-          <div className="text-center p-8 bg-white border border-gray-200">
-            <p className="text-4xl mb-2">7+</p>
-            <p className="text-sm tracking-wider text-gray-600">{t('about.stat2')}</p>
+          <div className={styles.about__stat}>
+            <span className={styles.about__statValue}>7+</span>
+            <span className={styles.about__statLabel}>{t('about.stat2')}</span>
           </div>
-          <div className="text-center p-8 bg-white border border-gray-200">
-            <p className="text-4xl mb-2">7+</p>
-            <p className="text-sm tracking-wider text-gray-600">{t('about.stat3')}</p>
+          <div className={styles.about__stat}>
+            <span className={styles.about__statValue}>7+</span>
+            <span className={styles.about__statLabel}>{t('about.stat3')}</span>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

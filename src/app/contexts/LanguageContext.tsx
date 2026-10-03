@@ -28,11 +28,25 @@ const translations = {
     'hero.title': 'INTERNATIONAL BUSINESS',
     'hero.greeting': "Hello, I'm",
     'hero.name': 'Nguyễn Thế Anh',
+    'hero.multilingualLabel': 'GREETING',
+    'hero.introShort':
+      'An International Business graduate with a strong interest in business operations, professional development, and organizational growth.',
+    'hero.introTail':
+      'Adaptable, eager to learn, and open to opportunities where I can apply my knowledge, develop practical skills, and contribute to meaningful results.',
     'hero.intro':
       'An International Business graduate with a strong interest in business operations, professional development, and organizational growth. Adaptable, eager to learn, and open to diverse career opportunities where I can apply my knowledge, develop practical skills, and contribute to meaningful results.',
     'hero.objective.title': 'CAREER OBJECTIVE',
+    'hero.objective.short':
+      'To establish a long-term career in a professional environment where I can continuously expand my knowledge, strengthen my capabilities, and take on new challenges.',
     'hero.objective.text':
       'To establish a long-term career in a professional environment where I can continuously expand my knowledge, strengthen my capabilities, and take on new challenges. I aspire to grow through diverse experiences, contribute to organizational success, and develop into a well-rounded professional.',
+    'hero.meta.basedIn': 'BASED IN',
+    'hero.meta.location': 'Ho Chi Minh City, Vietnam',
+    'hero.meta.focus': 'FOCUS',
+    'hero.meta.discipline': 'International Business',
+    'hero.cta.primary': 'View My Experience',
+    'hero.cta.secondary': 'Contact Me',
+    'hero.scroll': 'Scroll',
     'hero.download': 'DOWNLOAD CV',
     'hero.contact': 'CONTACT ME',
 
@@ -133,11 +147,25 @@ const translations = {
     'hero.title': 'SINH VIÊN KINH DOANH QUỐC TẾ',
     'hero.greeting': 'Xin chào, tôi là',
     'hero.name': 'Nguyễn Thế Anh',
+    'hero.multilingualLabel': 'LỜI CHÀO',
+    'hero.introShort':
+      'Sinh viên tốt nghiệp ngành Kinh doanh Quốc tế, đam mê phát triển kinh doanh, vận hành doanh nghiệp và tăng trưởng tổ chức.',
+    'hero.introTail':
+      'Linh hoạt, ham học hỏi và sẵn sàng đón nhận cơ hội để áp dụng kiến thức, rèn luyện kỹ năng thực tế và tạo ra giá trị thiết thực.',
     'hero.intro':
       'Sinh viên tốt nghiệp ngành Kinh doanh Quốc tế, đang định hướng phát triển sự nghiệp trong lĩnh vực Nhân sự, với thế mạnh về giao tiếp, tuyển dụng và điều phối nhân sự.',
     'hero.objective.title': 'MỤC TIÊU NGHỀ NGHIỆP',
+    'hero.objective.short':
+      'Xây dựng sự nghiệp lâu dài trong môi trường chuyên nghiệp, không ngừng mở rộng kiến thức, nâng cao năng lực và chinh phục những thử thách mới.',
     'hero.objective.text':
       'Xây dựng sự nghiệp lâu dài trong lĩnh vực Nhân sự, tập trung vào tuyển dụng và phát triển nhân tài, không ngừng nâng cao chuyên môn để tìm kiếm, thu hút và phát triển nguồn nhân lực phù hợp, đồng thời góp phần xây dựng tổ chức bền vững, lấy con người làm trung tâm.',
+    'hero.meta.basedIn': 'ĐỊA CHỈ',
+    'hero.meta.location': 'TP. Hồ Chí Minh, Việt Nam',
+    'hero.meta.focus': 'LĨNH VỰC',
+    'hero.meta.discipline': 'Kinh doanh Quốc tế',
+    'hero.cta.primary': 'Xem Kinh nghiệm',
+    'hero.cta.secondary': 'Liên hệ tôi',
+    'hero.scroll': 'Cuộn',
     'hero.download': 'TẢI CV',
     'hero.contact': 'LIÊN HỆ TÔI',
 
