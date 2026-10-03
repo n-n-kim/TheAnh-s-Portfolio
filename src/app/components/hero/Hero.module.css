@@ -15,7 +15,7 @@
 
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   background: #0a0a0a;
   color: var(--ink);
   font-family: var(--font-sans);
@@ -57,21 +57,19 @@
   pointer-events: none;
   user-select: none;
   z-index: 0;
-  /* Allow the wordmark to extend slightly beyond the viewport
-     for editorial bleed without causing horizontal scroll. */
   overflow: hidden;
 }
 .heroWordmarkText {
   font-family: var(--font-sans);
   font-weight: 800;
   letter-spacing: -0.06em;
-  font-size: clamp(180px, 26vw, 460px);
+  font-size: clamp(140px, 26vw, 460px);
   line-height: 0.82;
   color: rgba(255, 255, 255, 0.045);
   white-space: nowrap;
   text-transform: uppercase;
-  /* Sit slightly above the portrait's head so the letters peek out. */
   transform: translateY(-4%);
+  max-width: 100%;
 }
 
 /* ============================================================================
@@ -83,7 +81,7 @@
   max-width: 1480px;
   margin: 0 auto;
   padding: 6rem 3.5rem 5rem;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
 }
@@ -107,6 +105,7 @@
   gap: 1.6rem;
   z-index: 4;
   max-width: 27rem;
+  min-width: 0;
 }
 
 /* Eyebrow — minimal, no line marker */
@@ -127,28 +126,33 @@
   position: relative;
   display: inline-flex;
   align-items: baseline;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 1.45rem;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--ink-strong);
   margin: 0;
-  /* Inline-flex so the word naturally drives the surrounding width. */
-  white-space: nowrap;
+  min-width: 0;
+  max-width: 100%;
+  /* inline-flex so the word naturally drives the surrounding width. */
 }
 .multilingualWordWrapper {
   position: relative;
   display: inline-flex;
   align-items: baseline;
+  min-width: 0;
 }
 .multilingualWord {
   display: inline-block;
   font-style: italic;
   font-weight: 500;
-  /* No fixed min-width — the word's natural width drives layout. */
   white-space: pre;
+  /* Allow long translation words to wrap if container is tight. */
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .multilingualCaret {
   display: inline-block;
@@ -158,6 +162,7 @@
   background: var(--ink-strong);
   vertical-align: -0.12em;
   opacity: 0;
+  flex-shrink: 0;
 }
 .multilingualCaretOn {
   opacity: 1;
@@ -185,13 +190,22 @@
   margin: 0;
   font-family: var(--font-sans);
   font-weight: 800;
-  font-size: clamp(3rem, 5.2vw, 5.2rem);
+  font-size: clamp(2.4rem, 5.2vw, 5.2rem);
   line-height: 1.1;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--ink-strong);
+  min-width: 0;
+  max-width: 100%;
+  /* Safety: never let one giant word overflow the column. */
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  hyphens: auto;
 }
-.heroNameLine { display: block; }
+.heroNameLine {
+  display: block;
+  min-width: 0;
+}
 
 /* ============================================================================
    INTRO TEXT — restrained body
@@ -204,6 +218,8 @@
   font-weight: 400;
   font-family: var(--font-sans);
   margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .heroIntroText + .heroIntroText { margin-top: 0.5rem; }
 
@@ -216,9 +232,9 @@
   align-items: center;
   justify-content: center;
   min-height: 440px;
-  /* Extra width so absolute-positioned tags can sit OUTSIDE the portrait. */
   padding: 0 2.5rem;
   z-index: 3;
+  min-width: 0;
 }
 
 .heroPortraitWrap {
@@ -232,12 +248,12 @@
 
 .heroPortraitStage {
   position: relative;
-  /* ~30–40% of typical viewport height. */
-  width: clamp(280px, 30vw, 420px);
+  width: clamp(260px, 30vw, 420px);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 /* Soft organic grayscale shape behind the portrait */
@@ -288,8 +304,6 @@
   border-radius: 50%;
   filter: grayscale(0.28) contrast(1.03);
   transform: scale(1.04);
-  /* Stronger fade — portrait feels integrated into the composition
-     rather than a hard-edged cutout. */
   -webkit-mask-image: radial-gradient(circle at center, #000 70%, rgba(0,0,0,0.55) 88%, transparent 100%);
   mask-image: radial-gradient(circle at center, #000 70%, rgba(0,0,0,0.55) 88%, transparent 100%);
   transition: filter 0.6s ease;
@@ -310,6 +324,7 @@
   z-index: 4;
   max-width: 14rem;
   margin-left: auto;
+  min-width: 0;
 }
 .heroMetaBlock {
   display: flex;
@@ -355,6 +370,7 @@
 .heroButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.55rem;
   padding: 0.72rem 1.25rem;
   font-size: 0.68rem;
@@ -372,6 +388,8 @@
   text-decoration: none;
   white-space: nowrap;
   font-family: var(--font-sans);
+  min-width: 0;
+  max-width: 100%;
 }
 .heroButton:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.6);
@@ -402,6 +420,7 @@
   display: inline-flex;
   align-items: center;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
 }
 .heroButton:hover .heroButtonIcon {
   transform: translateX(4px);
@@ -433,12 +452,14 @@
   white-space: nowrap;
   cursor: default;
   font-family: var(--font-sans);
-  /* Soft, low shadow — a label floating in space, not a raised button */
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
   opacity: 1;
   transition:
     background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .floatingSkillDesktop:hover {
   background: rgba(255, 255, 255, 1);
@@ -509,29 +530,34 @@
 .floatingSkillsMobile {
   display: none;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.45rem;
   justify-content: flex-start;
   z-index: 4;
+  max-width: 100%;
 }
 .floatingSkillMobile {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.48rem 0.85rem;
+  gap: 0.4rem;
+  padding: 0.42rem 0.7rem;
   background: rgba(255, 255, 255, 0.94);
   color: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 999px;
-  font-size: 0.73rem;
+  font-size: 0.7rem;
   font-weight: 500;
   white-space: nowrap;
   font-family: var(--font-sans);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .floatingSkillMobile .floatingSkillIcon {
   color: rgba(10, 10, 10, 0.45);
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.78rem;
+  height: 0.78rem;
+  flex-shrink: 0;
 }
 
 /* ============================================================================
@@ -580,6 +606,7 @@
   .heroContainer { padding: 7.5rem 4rem 6rem; }
   .heroGrid { column-gap: 4rem; }
   .heroPortraitStage { width: 440px; }
+  .heroWordmarkText { font-size: 460px; }
 }
 
 /* ============================================================================
@@ -603,10 +630,10 @@
     min-height: auto;
   }
   .heroIntro {
-    max-width: 36rem;
+    max-width: 40rem;
     gap: 1.3rem;
   }
-  .heroCenter { min-height: 480px; }
+  .heroCenter { min-height: 480px; padding: 0 4rem; }
   .heroPortraitStage {
     width: clamp(300px, 50vw, 400px);
   }
@@ -635,10 +662,11 @@
   .pos-bottom-far-left { bottom: -8%; left: 8%; }
   .pos-bottom-right { bottom: -4%; right: 0%; }
   .pos-bottom-far-right { bottom: -8%; right: 4%; }
+  .heroWordmarkText { font-size: clamp(200px, 32vw, 360px); }
 }
 
 /* ============================================================================
-   RESPONSIVE — TABLET SMALL (900 and below)
+   RESPONSIVE — TABLET SMALL (900 and below) — switch to mobile tag list
    ============================================================================ */
 @media (max-width: 900px) {
   .floatingSkillsDesktop { display: none; }
@@ -646,10 +674,11 @@
     display: flex;
     justify-content: center;
   }
+  .heroCenter { min-height: 420px; padding: 0 2rem; }
 }
 
 /* ============================================================================
-   RESPONSIVE — MOBILE (768 and below)
+   RESPONSIVE — MOBILE LARGE (768 and below)
    ============================================================================ */
 @media (max-width: 768px) {
   .heroContainer {
@@ -660,9 +689,12 @@
     gap: 1.5rem;
     min-height: auto;
   }
-  /* Mobile source order */
   .heroIntro { order: 1; max-width: none; gap: 1.05rem; }
-  .heroCenter { order: 2; min-height: 360px; }
+  .heroCenter {
+    order: 2;
+    min-height: 360px;
+    padding: 0 1rem;
+  }
   .heroMeta {
     order: 3;
     flex-direction: column;
@@ -680,43 +712,90 @@
 
   .heroPortraitStage { width: min(72vw, 360px); }
   .heroName {
-    font-size: clamp(2.8rem, 11vw, 3.6rem);
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
   }
-  .multilingual { font-size: 1.2rem; }
+  .multilingual { font-size: 1.1rem; line-height: 1.3; }
   .heroIntroText { font-size: 0.88rem; max-width: none; }
-  .heroButton { font-size: 0.66rem; padding: 0.75rem 1.2rem; }
+  .heroButton { font-size: 0.66rem; padding: 0.7rem 1.1rem; }
   .heroEyebrow { font-size: 0.62rem; letter-spacing: 0.28em; }
-  .heroWordmarkText { font-size: clamp(140px, 38vw, 260px); }
+  .heroWordmarkText { font-size: clamp(120px, 38vw, 220px); }
+  .heroMetaLabel { font-size: 0.55rem; }
+  .heroMetaValue { font-size: 0.74rem; }
 }
 
 /* ============================================================================
-   RESPONSIVE — SMALL MOBILE (480 and below)
+   RESPONSIVE — MOBILE MEDIUM (560 and below)
+   ============================================================================ */
+@media (max-width: 560px) {
+  .heroContainer { padding: 4.5rem 1.2rem 3.5rem; }
+  .heroCenter { min-height: 320px; padding: 0 0.5rem; }
+  .heroPortraitStage { width: min(76vw, 320px); }
+  .heroName { font-size: clamp(2.2rem, 11.5vw, 3.0rem); }
+  .heroWordmarkText { font-size: clamp(110px, 38vw, 180px); }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE SMALL (480 and below)
    ============================================================================ */
 @media (max-width: 480px) {
-  .heroContainer {
-    padding: 4.75rem 1.1rem 3.5rem;
-  }
+  .heroContainer { padding: 4.5rem 1rem 3rem; }
   .heroActions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
   }
   .heroButton {
     justify-content: center;
+    width: 100%;
   }
-  .heroPortraitStage { width: min(78vw, 320px); }
-  .heroCenter { min-height: 320px; }
+  .heroPortraitStage { width: min(78vw, 300px); }
+  .heroCenter { min-height: 300px; }
   .heroName {
-    font-size: clamp(2.4rem, 13vw, 3.2rem);
+    font-size: clamp(2rem, 12vw, 2.6rem);
+    line-height: 1.05;
   }
+  .multilingual {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  .floatingSkillMobile {
+    font-size: 0.66rem;
+    padding: 0.4rem 0.62rem;
+  }
+  .heroWordmarkText {
+    font-size: clamp(100px, 38vw, 160px);
+    /* Keep wordmark safely inside the viewport on the smallest screens. */
+    max-width: 100vw;
+  }
+  .heroMetaLabel { font-size: 0.52rem; letter-spacing: 0.28em; }
+  .heroMetaValue { font-size: 0.7rem; }
+  .heroIntroText { font-size: 0.84rem; }
+  .heroObjective { font-size: 0.7rem; }
 }
 
 /* ============================================================================
-   RESPONSIVE — EXTRA SMALL MOBILE (360 and below)
+   RESPONSIVE — EXTRA SMALL MOBILE (375 and below)
    ============================================================================ */
-@media (max-width: 360px) {
-  .heroContainer { padding: 4.5rem 0.85rem 3rem; }
-  .heroPortraitStage { width: min(80vw, 280px); }
-  .heroName { font-size: clamp(2.2rem, 12vw, 2.8rem); }
+@media (max-width: 375px) {
+  .heroContainer { padding: 4.25rem 0.85rem 2.75rem; }
+  .heroPortraitStage { width: min(82vw, 280px); }
+  .heroName { font-size: clamp(1.85rem, 12vw, 2.4rem); }
+  .heroWordmarkText { font-size: clamp(90px, 38vw, 130px); }
+  .multilingual { font-size: 0.95rem; }
+}
+
+/* ============================================================================
+   RESPONSIVE — TINIEST MOBILE (340 and below)
+   ============================================================================ */
+@media (max-width: 340px) {
+  .heroContainer { padding: 4rem 0.75rem 2.5rem; }
+  .heroPortraitStage { width: min(85vw, 260px); }
+  .heroName { font-size: clamp(1.7rem, 12vw, 2.1rem); }
+  .heroWordmarkText { font-size: clamp(80px, 36vw, 120px); }
+  .multilingual { font-size: 0.9rem; }
+  .heroButton { font-size: 0.62rem; padding: 0.65rem 0.95rem; }
 }
 
 /* ============================================================================

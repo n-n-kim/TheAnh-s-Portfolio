@@ -40,10 +40,19 @@ export function AboutSection() {
 
         <Reveal className={styles.about}>
           <div className={styles.about__intro}>
-            <p className={styles.about__display}>
-              {t('about.summary.title')} —{' '}
-              <em>international business, market research, and operational growth.</em>
-            </p>
+            {(() => {
+              const fullTitle = t('about.summary.title');
+              const separator = ' – ';
+              const hasSeparator = fullTitle.includes(separator);
+              const heading = hasSeparator ? fullTitle.split(separator)[0] : fullTitle;
+              const sub = hasSeparator ? fullTitle.split(separator).slice(1).join(separator) : '';
+              return (
+                <>
+                  {sub && <span className={styles.about__eyebrow}>{sub}</span>}
+                  <h3 className={styles.about__display}>{heading}</h3>
+                </>
+              );
+            })()}
             <p className={styles.about__body}>{t('about.summary.p1')}</p>
             <p className={styles.about__body}>{t('about.summary.p2')}</p>
           </div>

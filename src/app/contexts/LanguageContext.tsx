@@ -53,11 +53,11 @@ const translations = {
     // About Section
     'about.label': 'INTRODUCTION',
     'about.title': 'About Me',
-    'about.summary.title': 'Professional Summary',
+    'about.summary.title': 'Professional Summary – international business, adaptability, and long-term career growth.',
     'about.summary.p1':
-      'I am a third-year International Business student at FPT University with a strong passion for global commerce and business operations. I enjoy researching markets, understanding customer behavior, and developing strategies that create real value.',
+      'I am an International Business graduate from FPT University with a strong interest in business development, organizational operations, and professional growth. With a willingness to learn, adaptability, and strong communication skills, I am eager to explore diverse career opportunities and apply my knowledge in a practical working environment.',
     'about.summary.p2':
-      'Currently seeking opportunities in international business, marketing, logistics, and trade operations where I can apply my analytical mindset, communication skills, and eagerness to learn in a professional environment.',
+      'I am seeking opportunities where I can continuously develop my capabilities, take on new challenges, and contribute to organizational goals. My long-term ambition is to build a sustainable career, gain valuable professional experience, and grow into a versatile professional who creates meaningful value.',
     'about.interests.title': 'Career Interests',
     'about.interest1': 'International Business',
     'about.interest2': 'Market Research',
@@ -172,11 +172,11 @@ const translations = {
     // About Section
     'about.label': 'GIỚI THIỆU',
     'about.title': 'Về tôi',
-    'about.summary.title': 'Tóm tắt chuyên môn',
+    'about.summary.title': 'Tóm tắt chuyên môn – kinh doanh quốc tế, khả năng thích ứng và phát triển sự nghiệp lâu dài.',
     'about.summary.p1':
-      'Tôi là sinh viên năm 3 chuyên ngành Kinh doanh Quốc tế tại Đại học FPT với niềm đam mê mạnh mẽ về thương mại toàn cầu và hoạt động kinh doanh. Tôi thích nghiên cứu thị trường, hiểu hành vi khách hàng và phát triển các chiến lược tạo ra giá trị thực sự.',
+      'Tôi là cử nhân ngành Kinh doanh Quốc tế tại Đại học FPT với sự quan tâm mạnh mẽ đến phát triển kinh doanh, vận hành tổ chức và phát triển nghề nghiệp. Với tinh thần ham học hỏi, khả năng thích ứng cao và kỹ năng giao tiếp tốt, tôi mong muốn khám phá các cơ hội nghề nghiệp đa dạng và áp dụng kiến thức của mình trong môi trường làm việc thực tế.',
     'about.summary.p2':
-      'Hiện đang tìm kiếm cơ hội trong lĩnh vực kinh doanh quốc tế, marketing, logistics và hoạt động thương mại, nơi tôi có thể áp dụng tư duy phân tích, kỹ năng giao tiếp và sự nhiệt huyết học hỏi trong môi trường chuyên nghiệp.',
+      'Tôi đang tìm kiếm những cơ hội để liên tục phát triển năng lực bản thân, đón nhận những thử thách mới và đóng góp vào mục tiêu chung của tổ chức. Tham vọng lâu dài của tôi là xây dựng một sự nghiệp bền vững, tích lũy kinh nghiệm nghề nghiệp quý báu và trở thành một chuyên viên đa năng, tạo ra giá trị có ý nghĩa.',
     'about.interests.title': 'Định hướng nghề nghiệp',
     'about.interest1': 'Kinh doanh Quốc tế',
     'about.interest2': 'Nghiên cứu Thị trường',
